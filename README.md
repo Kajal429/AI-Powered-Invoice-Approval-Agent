@@ -1,6 +1,6 @@
 # AI-Powered Invoice Approval Agent
 
-**UiPath · Document Understanding · AI Agent · RPA **
+UiPath · Document Understanding · AI Agent · RPA
 
 An end-to-end invoice approval automation built with UiPath, Document Understanding, OCR, and AI Agents.
 
