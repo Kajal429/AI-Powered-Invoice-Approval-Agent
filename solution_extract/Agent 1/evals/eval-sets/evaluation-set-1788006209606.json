@@ -1,0 +1,66 @@
+{
+  "fileName": "evaluation-set-1788006209606.json",
+  "id": "556358a2-d767-4bd4-8670-66019d0192ce",
+  "name": "Evaluation Set 2",
+  "batchSize": 10,
+  "evaluatorRefs": [
+    "d2b3817e-4dbb-44e2-8bb2-f731882c0268",
+    "ddba680a-5055-4681-ad0a-c84358624800"
+  ],
+  "evaluations": [
+    {
+      "id": "2422c3ef-7966-48fe-b0ae-5fea6f6de243",
+      "name": "Approve",
+      "inputs": {
+        "InvoiceDate": "2026-05-21",
+        "InvoiceVendorName": "Cookie Supply Co.",
+        "InvoiceNumber": "INV005",
+        "InvoiceAmount": 480
+      },
+      "expectedOutput": {
+        "Status": "Approve",
+        "Reason": "Within Limit"
+      },
+      "simulationInstructions": "",
+      "expectedAgentBehavior": "",
+      "simulateInput": false,
+      "inputGenerationInstructions": "",
+      "simulateTools": false,
+      "toolsToSimulate": [],
+      "evalSetId": "556358a2-d767-4bd4-8670-66019d0192ce",
+      "createdAt": "2026-08-29T17:14:42.868Z",
+      "updatedAt": "2026-08-30T14:55:33.885Z",
+      "source": "manual"
+    },
+    {
+      "id": "521c440a-a1eb-4a53-8afe-e71164203fdf",
+      "name": "Review",
+      "inputs": {
+        "InvoiceDate": "2026-04-30",
+        "InvoiceVendorName": "Cookie Supply Co.",
+        "InvoiceNumber": "INV008",
+        "InvoiceAmount": 10000
+      },
+      "expectedOutput": {
+        "Status": "Review",
+        "Reason": "Over Limit"
+      },
+      "simulationInstructions": "",
+      "expectedAgentBehavior": "",
+      "simulateInput": false,
+      "inputGenerationInstructions": "",
+      "simulateTools": false,
+      "toolsToSimulate": [],
+      "evalSetId": "556358a2-d767-4bd4-8670-66019d0192ce",
+      "createdAt": "2026-08-29T17:16:07.160Z",
+      "updatedAt": "2026-08-30T14:55:39.493Z",
+      "source": "manual"
+    }
+  ],
+  "modelSettings": [],
+  "createdAt": "2026-08-29T12:23:29.608Z",
+  "updatedAt": "2026-08-30T14:55:39.493Z",
+  "agentMemoryEnabled": false,
+  "agentMemorySettings": [],
+  "lineByLineEvaluation": false
+}

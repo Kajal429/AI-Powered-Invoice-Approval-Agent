@@ -1,0 +1,123 @@
+{
+  "version": "2.0",
+  "resources": [
+    {
+      "resource": "EventTrigger",
+      "key": "45c3d321-dc6b-400e-9d8f-80c2d07e4e7c_Event_start",
+      "id": "EventTrigger45c3d321-dc6b-400e-9d8f-80c2d07e4e7c_Event_start",
+      "value": {
+        "ConnectionId": {
+          "defaultValue": "45c3d321-dc6b-400e-9d8f-80c2d07e4e7c",
+          "isExpression": false
+        },
+        "EntryPointUniqueId": {
+          "defaultValue": "550f6ff6-d7d0-41a5-8068-01500dbcac98",
+          "isExpression": false
+        }
+      },
+      "metadata": {
+        "UseConnectionService": "true",
+        "Connector": "uipath-google-drive",
+        "ActivityName": "New Invoice Uploaded",
+        "BindingsVersion": "2.2",
+        "ObjectName": "File",
+        "Operation": "FILE_CREATED",
+        "FilterExpression": "(ParentID == '1LqRfTW47NclcezbJK00ETc1pOysuYmVu') && ((Extension=='pdf'))"
+      }
+    },
+    {
+      "resource": "Property",
+      "key": "FILE_CREATED_EventTrigger.45c3d321-dc6b-400e-9d8f-80c2d07e4e7c_Event_start",
+      "value": {
+        "ParentDriveID": {
+          "defaultValue": "0ABmWi8EoWVvqUk9PVA",
+          "isExpression": false
+        }
+      },
+      "activityDisplayName": "Connector",
+      "metadata": {
+        "ActivityName": "New Invoice Uploaded",
+        "BindingsVersion": "2.2",
+        "ObjectName": "File",
+        "ParentResourceKey": "EventTrigger.45c3d321-dc6b-400e-9d8f-80c2d07e4e7c_Event_start",
+        "TriggerCreateParameters": "ParentDriveID",
+        "DebugQueryParameters": "ParentDriveID"
+      },
+      "id": "Property_Event_start"
+    },
+    {
+      "resource": "Connection",
+      "key": "45c3d321-dc6b-400e-9d8f-80c2d07e4e7c",
+      "id": "Connection45c3d321-dc6b-400e-9d8f-80c2d07e4e7c",
+      "value": {
+        "ConnectionId": {
+          "defaultValue": "45c3d321-dc6b-400e-9d8f-80c2d07e4e7c",
+          "isExpression": false,
+          "displayName": "uipath-google-drive connection"
+        }
+      },
+      "metadata": {
+        "ActivityName": "New Invoice Uploaded",
+        "BindingsVersion": "2.2",
+        "DisplayLabel": "uipath-google-drive connection",
+        "UseConnectionService": "true",
+        "Connector": "uipath-google-drive"
+      }
+    },
+    {
+      "resource": "process",
+      "key": "RPA Workflow",
+      "id": "processRPA Workflow",
+      "value": {
+        "name": {
+          "defaultValue": "RPA Workflow",
+          "isExpression": false,
+          "displayName": "Process name"
+        }
+      },
+      "metadata": {
+        "ActivityName": "Download and Extract Invoice Details",
+        "BindingsVersion": "2.2",
+        "DisplayLabel": "name",
+        "SolutionsSupport": "true"
+      }
+    },
+    {
+      "resource": "app",
+      "key": "SimpleApprovalApp1",
+      "id": "appSimpleApprovalApp1",
+      "value": {
+        "name": {
+          "defaultValue": "SimpleApprovalApp1",
+          "isExpression": false,
+          "displayName": "App name"
+        }
+      },
+      "metadata": {
+        "ActivityName": "Review",
+        "BindingsVersion": "2.2",
+        "DisplayLabel": "name",
+        "SolutionsSupport": "true"
+      }
+    },
+    {
+      "resource": "process",
+      "key": "Agent 1",
+      "id": "processAgent 1",
+      "value": {
+        "name": {
+          "defaultValue": "Agent 1",
+          "isExpression": false,
+          "displayName": "Process name"
+        }
+      },
+      "metadata": {
+        "ActivityName": "Invoice Decision Agent",
+        "BindingsVersion": "2.2",
+        "DisplayLabel": "name",
+        "SolutionsSupport": "true",
+        "subType": "Agent"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "DocVersion": "1.0.0",
+  "StudioMinVersion": "2025.04.0",
+  "SolutionId": "b14c6009-6cc9-496f-b52b-08df0409a94a",
+  "Projects": [
+    {
+      "Type": "Agent",
+      "ProjectRelativePath": "Agent 1/project.uiproj",
+      "Id": "8a5be198-2dbe-41d4-94e0-409bdedaa151"
+    },
+    {
+      "Type": "Process",
+      "ProjectRelativePath": "RPA Workflow/project.uiproj",
+      "Id": "d62392d4-917a-4255-b6a8-576283ffefb2"
+    },
+    {
+      "Type": "ProcessOrchestration",
+      "ProjectRelativePath": "Maestro BPMN/project.uiproj",
+      "Id": "6021948a-5d98-4232-aae9-dfbeba95165e"
+    },
+    {
+      "Type": "WebApp",
+      "ProjectRelativePath": "SimpleApprovalApp1/project.uiproj",
+      "Id": "cfe1d440-c7c4-4210-afcf-af4851a35268"
+    }
+  ],
+  "AutomationHubIdeaUrl": null
+}

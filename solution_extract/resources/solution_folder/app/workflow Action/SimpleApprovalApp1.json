@@ -1,0 +1,45 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "SimpleApprovalApp1",
+    "kind": "app",
+    "type": "workflow Action",
+    "apiVersion": "apps.uipath.com/v1",
+    "projectKey": "cfe1d440-c7c4-4210-afcf-af4851a35268",
+    "isOverridable": true,
+    "dependencies": [
+      {
+        "name": "SimpleApprovalApp1",
+        "kind": "appVersion"
+      },
+      {
+        "name": "SimpleApprovalApp1",
+        "kind": "process"
+      }
+    ],
+    "runtimeDependencies": [],
+    "files": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "name": "SimpleApprovalApp1",
+      "description": null,
+      "type": "workflow Action",
+      "version": null,
+      "appSystemName": null,
+      "appVersionRef": {
+        "key": "7f26ed55-a2c7-4af1-b8fa-0c61ec748d70"
+      },
+      "codeBehindProcess": {
+        "key": "783205a9-43dc-4500-9770-1480af768016"
+      },
+      "actionSchema": null,
+      "manualActivationActions": null
+    },
+    "locks": [],
+    "key": "b42b250a-e3c5-4a7c-a590-ccb3a0e3f5b0"
+  }
+}

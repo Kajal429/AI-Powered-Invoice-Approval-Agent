@@ -1,0 +1,51 @@
+{
+  "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+  "$id": "entry-points.json",
+  "entryPoints": [
+    {
+      "filePath": "/content/agent.json",
+      "type": "agent",
+      "uniqueId": "d94c1003-f302-4e71-9c7c-059f7d0dc30b",
+      "input": {
+        "type": "object",
+        "required": [
+          "InvoiceDate",
+          "InvoiceVendorName",
+          "InvoiceNumber",
+          "InvoiceAmount"
+        ],
+        "properties": {
+          "InvoiceDate": {
+            "type": "string"
+          },
+          "InvoiceVendorName": {
+            "type": "string"
+          },
+          "InvoiceNumber": {
+            "type": "string"
+          },
+          "InvoiceAmount": {
+            "type": "number"
+          }
+        }
+      },
+      "output": {
+        "type": "object",
+        "required": [
+          "Status",
+          "Reason"
+        ],
+        "properties": {
+          "Status": {
+            "type": "string",
+            "description": "Approval decision. Must be either 'Approve' or 'Review'."
+          },
+          "Reason": {
+            "type": "string",
+            "description": "Explanation for the decision. Must be 'Within Limit', 'Over Limit', or 'Missing <field>'."
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "version": "1.2.0",
+  "settings": {
+    "model": "gpt-4.1-2025-04-14",
+    "maxTokens": 4096,
+    "temperature": 0,
+    "engine": "basic-v2",
+    "maxIterations": 25,
+    "mode": "standard"
+  },
+  "inputSchema": {
+    "type": "object",
+    "required": [
+      "InvoiceDate",
+      "InvoiceVendorName",
+      "InvoiceNumber",
+      "InvoiceAmount"
+    ],
+    "properties": {
+      "InvoiceDate": {
+        "type": "string"
+      },
+      "InvoiceVendorName": {
+        "type": "string"
+      },
+      "InvoiceNumber": {
+        "type": "string"
+      },
+      "InvoiceAmount": {
+        "type": "number"
+      }
+    }
+  },
+  "outputSchema": {
+    "type": "object",
+    "required": [
+      "Status",
+      "Reason"
+    ],
+    "properties": {
+      "Status": {
+        "type": "string",
+        "description": "Approval decision. Must be either 'Approve' or 'Review'."
+      },
+      "Reason": {
+        "type": "string",
+        "description": "Explanation for the decision. Must be 'Within Limit', 'Over Limit', or 'Missing <field>'."
+      }
+    }
+  },
+  "metadata": {
+    "storageVersion": "50.0.0",
+    "isConversational": false,
+    "targetRuntime": "pythonAgent",
+    "showProjectCreationExperience": false
+  },
+  "type": "lowCode",
+  "projectId": "9328d9df-9cae-440c-8992-16eebf0a6082",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are an invoice approval assistant. Your job is to analyze the provided invoice fields and return a structured approval decision.\n\nRules:\n1. If any required field is missing or empty (Invoice Date, Invoice Vendor Name, Invoice Number, or Invoice Amount), return Status \"Review\" and Reason \"Missing <field>\" where <field> is the missing field's display name: \"Invoice Vendor Name\", \"Invoice Number\", \"Invoice Date\", or \"Invoice Amount\".\n2. If all fields are present and Invoice Amount is less than or equal to 500, return Status \"Approve\" and Reason \"Within Limit\".\n3. If all fields are present and Invoice Amount is greater than 500, return Status \"Review\" and Reason \"Over Limit\".\n\nWork steps:\n1. Inspect each invoice field for presence and a non-empty value.\n2. Apply the rules above in priority order.\n3. Return the exact Status and Reason values.\n\nOutput rules:\n- Return ONLY JSON that matches outputSchema exactly. No markdown, no extra keys, no extra text.\n- Status must be exactly \"Approve\" or \"Review\".\n- Reason must be exactly \"Within Limit\", \"Over Limit\", or \"Missing <field>\".\n\nFinal reminder: Return only the structured JSON output matching outputSchema.",
+      "contentTokens": [
+        {
+          "type": "simpleText",
+          "rawString": "You are an invoice approval assistant. Your job is to analyze the provided invoice fields and return a structured approval decision.\n\nRules:\n1. If any required field is missing or empty (Invoice Date, Invoice Vendor Name, Invoice Number, or Invoice Amount), return Status \"Review\" and Reason \"Missing <field>\" where <field> is the missing field's display name: \"Invoice Vendor Name\", \"Invoice Number\", \"Invoice Date\", or \"Invoice Amount\".\n2. If all fields are present and Invoice Amount is less than or equal to 500, return Status \"Approve\" and Reason \"Within Limit\".\n3. If all fields are present and Invoice Amount is greater than 500, return Status \"Review\" and Reason \"Over Limit\".\n\nWork steps:\n1. Inspect each invoice field for presence and a non-empty value.\n2. Apply the rules above in priority order.\n3. Return the exact Status and Reason values.\n\nOutput rules:\n- Return ONLY JSON that matches outputSchema exactly. No markdown, no extra keys, no extra text.\n- Status must be exactly \"Approve\" or \"Review\".\n- Reason must be exactly \"Within Limit\", \"Over Limit\", or \"Missing <field>\".\n\nFinal reminder: Return only the structured JSON output matching outputSchema."
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "content": "Process the provided invoice data and return the approval status and reason.\n\nInvoice Date: <invoice_date>{{input.InvoiceDate}}</invoice_date>\nInvoice Vendor Name: <invoice_vendor_name>{{input.InvoiceVendorName}}</invoice_vendor_name>\nInvoice Number: <invoice_number>{{input.InvoiceNumber}}</invoice_number>\nInvoice Amount: <invoice_amount>{{input.InvoiceAmount}}</invoice_amount>\n\nSteps:\n1. Check whether Invoice Date, Invoice Vendor Name, Invoice Number, or Invoice Amount is missing or empty.\n2. If all fields are present and Invoice Amount is less than or equal to 500, return Status \"Approve\" and Reason \"Within Limit\".\n3. If all fields are present and Invoice Amount is greater than 500, return Status \"Review\" and Reason \"Over Limit\".\n4. If any field is missing or empty, return Status \"Review\" and Reason \"Missing <field display name>\".\n\nExample when all fields are present and amount is 480:\n{\"Status\": \"Approve\", \"Reason\": \"Within Limit\"}\n\nOutput rules:\n- Return ONLY JSON that matches outputSchema exactly. No markdown, no extra keys, no extra text.",
+      "contentTokens": [
+        {
+          "type": "simpleText",
+          "rawString": "Process the provided invoice data and return the approval status and reason.\n\nInvoice Date: <invoice_date>"
+        },
+        {
+          "type": "variable",
+          "rawString": "input.InvoiceDate"
+        },
+        {
+          "type": "simpleText",
+          "rawString": "</invoice_date>\nInvoice Vendor Name: <invoice_vendor_name>"
+        },
+        {
+          "type": "variable",
+          "rawString": "input.InvoiceVendorName"
+        },
+        {
+          "type": "simpleText",
+          "rawString": "</invoice_vendor_name>\nInvoice Number: <invoice_number>"
+        },
+        {
+          "type": "variable",
+          "rawString": "input.InvoiceNumber"
+        },
+        {
+          "type": "simpleText",
+          "rawString": "</invoice_number>\nInvoice Amount: <invoice_amount>"
+        },
+        {
+          "type": "variable",
+          "rawString": "input.InvoiceAmount"
+        },
+        {
+          "type": "simpleText",
+          "rawString": "</invoice_amount>\n\nSteps:\n1. Check whether Invoice Date, Invoice Vendor Name, Invoice Number, or Invoice Amount is missing or empty.\n2. If all fields are present and Invoice Amount is less than or equal to 500, return Status \"Approve\" and Reason \"Within Limit\".\n3. If all fields are present and Invoice Amount is greater than 500, return Status \"Review\" and Reason \"Over Limit\".\n4. If any field is missing or empty, return Status \"Review\" and Reason \"Missing <field display name>\".\n\nExample when all fields are present and amount is 480:\n{\"Status\": \"Approve\", \"Reason\": \"Within Limit\"}\n\nOutput rules:\n- Return ONLY JSON that matches outputSchema exactly. No markdown, no extra keys, no extra text."
+        }
+      ]
+    }
+  ]
+}

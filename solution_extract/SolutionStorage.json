@@ -1,0 +1,21 @@
+{
+  "SolutionId": "b14c6009-6cc9-496f-b52b-08df0409a94a",
+  "Projects": [
+    {
+      "ProjectId": "9328d9df-9cae-440c-8992-16eebf0a6082",
+      "ProjectRelativePath": "Agent 1/project.uiproj"
+    },
+    {
+      "ProjectId": "1852133d-87e5-4127-a20b-29a3b1300217",
+      "ProjectRelativePath": "RPA Workflow/project.uiproj"
+    },
+    {
+      "ProjectId": "8625afd7-373f-46d7-9e5d-4d9cdeee101c",
+      "ProjectRelativePath": "Maestro BPMN/project.uiproj"
+    },
+    {
+      "ProjectId": "fea22d4b-6881-4610-aa53-8822ef0142d0",
+      "ProjectRelativePath": "SimpleApprovalApp1/project.uiproj"
+    }
+  ]
+}

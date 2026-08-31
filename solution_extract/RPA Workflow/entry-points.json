@@ -1,0 +1,40 @@
+{
+  "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+  "$id": "entry-points.json",
+  "entryPoints": [
+    {
+      "filePath": "Main.xaml",
+      "uniqueId": "5a555192-520d-45c0-9f66-47c56dde24f0",
+      "type": "Process",
+      "input": {
+        "type": "object",
+        "properties": {
+          "FileUrl": {
+            "type": "string"
+          }
+        },
+        "required": []
+      },
+      "output": {
+        "type": "object",
+        "properties": {
+          "InvoiceDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "InvoiceVendorName": {
+            "type": "string"
+          },
+          "InvoiceAmount": {
+            "type": "number",
+            "minimum": -1.7976931348623157E+308,
+            "maximum": 1.7976931348623157E+308
+          },
+          "InvoiceNumber": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "canvases": {
+    "7d9d60e5-111f-41fe-95ea-737ccf7b04db": {
+      "Activity_XvbaC9": {
+        "output": {
+          "enabled": false,
+          "value": {}
+        }
+      },
+      "Activity_f5ZWBc": {
+        "output": {
+          "enabled": false,
+          "value": {}
+        }
+      },
+      "Activity_I5NXWq": {
+        "output": {
+          "enabled": false,
+          "value": {}
+        }
+      }
+    }
+  }
+}
